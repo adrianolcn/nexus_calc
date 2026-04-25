@@ -127,7 +127,7 @@ class _Header extends StatelessWidget {
               child: Text(
                 'CLEAR',
                 style: NexusTextStyles.chip(context).copyWith(
-                  color: NexusColors.red.withOpacity(0.8),
+                  color: NexusColors.red.withValues(alpha: 0.8),
                   fontSize: 11,
                 ),
               ),
@@ -164,7 +164,7 @@ class _HistoryTile extends StatelessWidget {
       child: Ink(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(18),
-          color: NexusColors.bg1.withOpacity(0.45),
+          color: NexusColors.bg1.withValues(alpha: 0.45),
           border: Border.all(color: NexusColors.border),
         ),
         child: Padding(

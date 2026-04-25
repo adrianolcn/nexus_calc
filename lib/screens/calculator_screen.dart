@@ -73,14 +73,14 @@ class CalculatorScreen extends StatelessWidget {
                             Expanded(
                               child: Container(
                                 decoration: BoxDecoration(
-                                  color: NexusColors.bg1.withOpacity(0.92),
+                                  color: NexusColors.bg1.withValues(alpha: 0.92),
                                   borderRadius: BorderRadius.circular(30),
                                   border: Border.all(
-                                    color: NexusColors.borderBright.withOpacity(0.65),
+                                    color: NexusColors.borderBright.withValues(alpha: 0.65),
                                   ),
                                   boxShadow: [
                                     BoxShadow(
-                                      color: Colors.black.withOpacity(0.28),
+                                      color: Colors.black.withValues(alpha: 0.28),
                                       blurRadius: 30,
                                       offset: const Offset(0, 18),
                                     ),
@@ -152,7 +152,7 @@ class _NexusAppBar extends StatelessWidget {
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
               border: Border.all(
-                color: NexusColors.cyan.withOpacity(0.7),
+                color: NexusColors.cyan.withValues(alpha: 0.7),
                 width: 1.4,
               ),
               gradient: const LinearGradient(
@@ -204,7 +204,7 @@ class _NexusAppBar extends StatelessWidget {
           const Spacer(),
           Container(
             decoration: BoxDecoration(
-              color: NexusColors.bg1.withOpacity(0.78),
+              color: NexusColors.bg1.withValues(alpha: 0.78),
               borderRadius: BorderRadius.circular(16),
               border: Border.all(color: NexusColors.border),
             ),
@@ -322,7 +322,7 @@ class _DotPainter extends CustomPainter {
   void paint(Canvas canvas, Size size) {
     const spacing = 26.0;
     final paint = Paint()
-      ..color = NexusColors.border.withOpacity(0.34)
+      ..color = NexusColors.border.withValues(alpha: 0.34)
       ..style = PaintingStyle.fill;
 
     for (double x = 0; x <= size.width; x += spacing) {

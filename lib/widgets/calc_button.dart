@@ -68,7 +68,7 @@ class _CalcButtonState extends State<CalcButton>
   }
 
   Color get _faceColor {
-    if (widget.isActive) return _glowColor.withOpacity(0.25);
+    if (widget.isActive) return _glowColor.withValues(alpha: 0.25);
 
     return switch (widget.type) {
       ButtonType.equals => NexusColors.green,
@@ -116,7 +116,7 @@ class _CalcButtonState extends State<CalcButton>
   List<BoxShadow> get _shadows => _held
       ? [
           BoxShadow(
-            color: _glowColor.withOpacity(0.6),
+            color: _glowColor.withValues(alpha: 0.6),
             blurRadius: 20,
             spreadRadius: 2,
           ),
@@ -124,14 +124,14 @@ class _CalcButtonState extends State<CalcButton>
       : widget.isActive
           ? [
               BoxShadow(
-                color: _glowColor.withOpacity(0.35),
+                color: _glowColor.withValues(alpha: 0.35),
                 blurRadius: 12,
                 spreadRadius: 1,
               ),
             ]
           : [
               BoxShadow(
-                color: _glowColor.withOpacity(0.12),
+                color: _glowColor.withValues(alpha: 0.12),
                 blurRadius: 8,
               ),
             ];
@@ -181,7 +181,7 @@ class _CalcButtonState extends State<CalcButton>
                   color: _faceColor,
                   borderRadius: BorderRadius.circular(18),
                   border: Border.all(
-                    color: _held ? _glowColor.withOpacity(0.8) : _borderColor,
+                    color: _held ? _glowColor.withValues(alpha: 0.8) : _borderColor,
                     width: widget.type == ButtonType.equals ? 1.6 : 1,
                   ),
                   boxShadow: _shadows,
@@ -238,7 +238,7 @@ class _ButtonContent extends StatelessWidget {
               child: Text(
                 subLabel!,
                 style: NexusTextStyles.badge(context).copyWith(
-                  color: NexusColors.amber.withOpacity(0.7),
+                  color: NexusColors.amber.withValues(alpha: 0.7),
                 ),
               ),
             ),

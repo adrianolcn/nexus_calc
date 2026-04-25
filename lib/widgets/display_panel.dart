@@ -85,7 +85,7 @@ class _DisplayPanelState extends State<DisplayPanel> {
                     style: NexusTextStyles.display(context).copyWith(
                       fontSize: expressionFontSize,
                       color: model.hasError
-                          ? NexusColors.red.withOpacity(0.7)
+                          ? NexusColors.red.withValues(alpha: 0.7)
                           : NexusColors.textSecondary,
                     ),
                     maxLines: 1,
@@ -158,9 +158,9 @@ class _Badge extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 7, vertical: 3),
       decoration: BoxDecoration(
-        color: color.withOpacity(0.12),
+        color: color.withValues(alpha: 0.12),
         borderRadius: BorderRadius.circular(4),
-        border: Border.all(color: color.withOpacity(0.4), width: 1),
+        border: Border.all(color: color.withValues(alpha: 0.4), width: 1),
       ),
       child: Text(
         label,
@@ -195,13 +195,13 @@ class _ResultText extends StatelessWidget {
             shadows: isFresh
                 ? [
                     Shadow(
-                      color: NexusColors.green.withOpacity(0.5),
+                      color: NexusColors.green.withValues(alpha: 0.5),
                       blurRadius: 20,
                     ),
                   ]
                 : [
                     Shadow(
-                      color: NexusColors.cyan.withOpacity(0.3),
+                      color: NexusColors.cyan.withValues(alpha: 0.3),
                       blurRadius: 12,
                     ),
                   ],
