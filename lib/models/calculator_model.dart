@@ -111,7 +111,7 @@ class CalculatorModel extends ChangeNotifier {
 
     if (_resultFresh) {
       _expression =
-          _result.startsWith('-') ? _result.substring(1) : '-${_result}';
+          _result.startsWith('-') ? _result.substring(1) : '-$_result';
       _resultFresh = false;
       _evaluateLive();
       notifyListeners();

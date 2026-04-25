@@ -84,7 +84,7 @@ class CalculatorScreen extends StatelessWidget {
                                       blurRadius: 30,
                                       offset: const Offset(0, 18),
                                     ),
-                                    BoxShadow(
+                                    const BoxShadow(
                                       color: NexusColors.cyanGlow,
                                       blurRadius: 28,
                                       spreadRadius: -16,
