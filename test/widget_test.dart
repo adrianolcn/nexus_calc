@@ -3,8 +3,8 @@ import 'package:nexus_calc/main.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
-  setUp(() async {
-    await SharedPreferences.setMockInitialValues({});
+  setUp(() {
+    SharedPreferences.setMockInitialValues({});
   });
 
   testWidgets('calculator renders and performs a basic operation', (tester) async {

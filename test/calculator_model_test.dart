@@ -8,7 +8,7 @@ void main() {
   late CalculatorModel calc;
 
   setUp(() async {
-    await SharedPreferences.setMockInitialValues({});
+    SharedPreferences.setMockInitialValues({});
     calc = CalculatorModel();
     await Future<void>.delayed(Duration.zero);
   });
