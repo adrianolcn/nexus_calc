@@ -1,68 +1,64 @@
-# NEXUS — Scientific Calculator
-
-<p align="center">
-  <img src="docs/preview.png" alt="NEXUS Calculator Preview" width="300"/>
-</p>
+# NEXUS — Calculadora Científica
 
 <p align="center">
   <img src="https://img.shields.io/badge/Flutter-3.10%2B-02569B?logo=flutter&logoColor=white"/>
   <img src="https://img.shields.io/badge/Dart-3.0%2B-0175C2?logo=dart&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Platform-Android%20%7C%20iOS-green"/>
-  <img src="https://img.shields.io/badge/License-MIT-brightgreen"/>
+  <img src="https://img.shields.io/badge/Plataforma-Android%20%7C%20iOS-green"/>
+  <img src="https://img.shields.io/badge/Licen%C3%A7a-MIT-brightgreen"/>
 </p>
 
-> A mobile-first scientific calculator built with Flutter for Android and iOS, with scientific functions, persistent history, memory registers, and a refined touch-first interface.
+> Uma calculadora científica mobile-first desenvolvida em Flutter para Android e iOS, com funções científicas, histórico persistente, registradores de memória e uma interface refinada para toque.
 
 ---
 
-## ✨ Features
+## ✨ Funcionalidades
 
-| Category | Details |
+| Categoria | Detalhes |
 |---|---|
-| **Arithmetic** | `+` `−` `×` `÷` with correct operator precedence |
-| **Scientific** | `sin` `cos` `tan` and inverses, `log` `ln` `exp` |
-| **Roots & Powers** | `√` `∛` `xʸ` `x²` |
-| **Constants** | `π` and `e` |
-| **Memory** | `MS` `MR` `M+` `MC` registers |
-| **History** | Draggable mobile history sheet with tap-to-recall, persisted across sessions |
-| **Angle Modes** | Switch between **DEG** and **RAD** at any time |
-| **2nd Mode** | Shift key unlocks inverse trig, `n!`, and more |
-| **Live Result** | Result updates as you type before pressing `=` |
-| **Touch UX** | Large thumb-friendly buttons, haptics, and denser spacing for smaller phones |
-| **Error UX** | Safer trig/constant parsing and clear invalid-expression state |
+| **Aritmética** | `+` `−` `×` `÷` com precedência correta de operadores |
+| **Científica** | `sin` `cos` `tan` e inversas, `log` `ln` `exp` |
+| **Raízes e potências** | `√` `∛` `xʸ` `x²` |
+| **Constantes** | `π` e `e` |
+| **Memória** | registradores `MS` `MR` `M+` `MC` |
+| **Histórico** | painel mobile arrastável com toque para reutilizar cálculos, persistido entre sessões |
+| **Modos angulares** | alternância entre **DEG** e **RAD** a qualquer momento |
+| **Modo 2nd** | tecla de alternância para inversas trigonométricas, `n!` e mais |
+| **Resultado ao vivo** | o resultado é atualizado enquanto você digita, antes de pressionar `=` |
+| **UX para toque** | botões grandes, feedback tátil e espaçamento mais denso para telas menores |
+| **UX de erro** | tratamento mais seguro para trigonometria/constantes e estado claro para expressões inválidas |
 
 ---
 
-## 📱 Platform focus
+## 📱 Foco de plataforma
 
-This repository is intentionally optimized for **Android** and **iOS**. The Flutter project still contains the usual generated platform folders, but the supported runtime target for this app is mobile only.
+Este repositório é intencionalmente otimizado para **Android** e **iOS**. O projeto Flutter ainda contém as pastas de plataforma geradas por padrão, mas o alvo oficial de execução desta aplicação é exclusivamente mobile.
 
-Mobile UX goals in this version:
+Objetivos de UX mobile nesta versão:
 
-- portrait-first experience for phones
-- comfortable tap targets and compact spacing on small screens
-- smooth bottom-sheet history for one-handed use
-- stable behaviour for trig functions and constants during long sessions
+- experiência pensada primeiro para celulares em retrato
+- áreas de toque confortáveis e espaçamento compacto em telas menores
+- histórico em bottom sheet para uso com uma mão
+- comportamento estável para trigonometria e constantes em sessões prolongadas
 
 ---
 
-## 📐 Architecture
+## 📐 Arquitetura
 
-The app uses a clean **Provider + ChangeNotifier** flow:
+O app usa um fluxo simples com **Provider + ChangeNotifier**:
 
 ```text
-Tap on a button
+Toque em um botão
    ↓
 CalcButton / ButtonGrid
    ↓
 CalculatorModel
-   ├─ updates expression, result, memory, history
-   └─ notifies listeners
+   ├─ atualiza expressão, resultado, memória e histórico
+   └─ notifica os listeners
    ↓
-DisplayPanel / HistoryPanel / ButtonGrid rebuild
+DisplayPanel / HistoryPanel / ButtonGrid são reconstruídos
 ```
 
-Project structure:
+Estrutura do projeto:
 
 ```text
 lib/
@@ -80,39 +76,39 @@ lib/
     └── history_panel.dart
 ```
 
-Detailed architecture notes live in [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
+Os detalhes da arquitetura estão em [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
 
 ---
 
-## 🚀 Getting started
+## 🚀 Como começar
 
-### Prerequisites
+### Pré-requisitos
 
-| Tool | Minimum version |
+| Ferramenta | Versão mínima |
 |---|---|
 | Flutter SDK | `3.10.0` |
 | Dart SDK | `3.0.0` |
-| Android Studio | latest stable |
-| Xcode | latest stable on macOS for iOS builds |
+| Android Studio | versão estável mais recente |
+| Xcode | versão estável mais recente no macOS para builds iOS |
 
-### Installation
+### Instalação
 
 ```bash
-# 1. Clone the repository
+# 1. Clone o repositório
 git clone https://github.com/YOUR_USERNAME/nexus_calc.git
 cd nexus_calc
 
-# 2. Install dependencies
+# 2. Instale as dependências
 flutter pub get
 
-# 3. Run on Android
+# 3. Rode no Android
 flutter run -d android
 
-# 4. Run on iOS (macOS + Xcode only)
+# 4. Rode no iOS (somente macOS + Xcode)
 flutter run -d ios
 ```
 
-### Build releases
+### Builds de release
 
 ```bash
 # Android
@@ -122,19 +118,19 @@ flutter build apk --release
 flutter build ios --release
 ```
 
-## 🧪 Testing
+## 🧪 Testes
 
 ```bash
 flutter analyze
 flutter test
 ```
 
-The current suite covers:
+A suíte atual cobre:
 
-- calculator model logic
-- angle mode transitions
-- history and memory flows
-- widget smoke coverage for the mobile UI
+- lógica do modelo da calculadora
+- transições do modo angular
+- fluxos de histórico e memória
+- smoke test da interface mobile
 
 ---
 
@@ -149,66 +145,66 @@ flutter analyze
 flutter test
 ```
 
-O repositório também possui GitHub Actions para validar análise estática e testes automaticamente. O workflow principal está em `.github/workflows/flutter-ci.yml` e deve ser tratado como a fonte principal de validação remota quando este ambiente local estiver instável.
+O repositório também possui GitHub Actions para validar análise estática e testes automaticamente. O workflow principal está em `.github/workflows/flutter-ci.yml` e deve ser tratado como a principal fonte de validação remota quando este ambiente local estiver instável.
 
 Para um resumo operacional dessa estratégia, veja também [docs/VALIDATION.md](docs/VALIDATION.md).
 
 ---
 
-## 🎨 Design system
+## 🎨 Sistema de design
 
-All design tokens live in `lib/utils/app_theme.dart`.
+Todos os tokens visuais ficam em `lib/utils/app_theme.dart`.
 
-### Colour palette
+### Paleta de cores
 
-| Token | Hex | Role |
+| Token | Hex | Papel |
 |---|---|---|
-| `bg0` | `#070B0F` | Deepest background |
-| `bg1` | `#0D1117` | Main surface |
-| `bg3` | `#1C2530` | Button face |
-| `cyan` | `#00E5FF` | Primary accent / result |
-| `amber` | `#FFAB00` | Secondary accent / 2nd mode |
-| `violet` | `#7C4DFF` | Operator buttons |
-| `green` | `#00E676` | Equals / fresh result |
-| `red` | `#FF1744` | Error state |
+| `bg0` | `#070B0F` | Fundo mais profundo |
+| `bg1` | `#0D1117` | Superfície principal |
+| `bg3` | `#1C2530` | Fundo dos botões |
+| `cyan` | `#00E5FF` | Destaque principal / resultado |
+| `amber` | `#FFAB00` | Destaque secundário / modo 2nd |
+| `violet` | `#7C4DFF` | Botões de operadores |
+| `green` | `#00E676` | Botão de igual / resultado recém-confirmado |
+| `red` | `#FF1744` | Estado de erro |
 
-### Typography
+### Tipografia
 
-- **JetBrains Mono** for expression display and results
-- **Space Mono** for chips, labels, and technical UI accents
+- **JetBrains Mono** para expressão e resultado
+- **Space Mono** para chips, rótulos e acentos técnicos da interface
 
 ---
 
-## 📦 Main dependencies
+## 📦 Principais dependências
 
 ```yaml
-math_expressions: ^2.4.0      # Expression parsing & evaluation
-shared_preferences: ^2.2.2    # History persistence
-provider: ^6.1.1              # State management
-google_fonts: ^6.1.0          # Typography
-flutter_animate: ^4.5.0       # Small UI motion
-vibration: ^1.8.4             # Haptic feedback on mobile
-gap: ^3.0.1                   # Spacing helpers
+math_expressions: ^2.4.0      # Parsing e avaliação de expressões
+shared_preferences: ^2.2.2    # Persistência do histórico
+provider: ^6.1.1              # Gerenciamento de estado
+google_fonts: ^6.1.0          # Tipografia
+flutter_animate: ^4.5.0       # Pequenas animações da UI
+vibration: ^1.8.4             # Feedback tátil no mobile
+gap: ^3.0.1                   # Helpers de espaçamento
 ```
 
 ---
 
 ## 🗺 Roadmap
 
-- [ ] Dedicated large-phone and tablet layout
-- [ ] Unit converter (m → ft, kg → lb, °C → °F)
-- [ ] Graphing mode
-- [ ] Additional themes
-- [ ] Localization (`pt-BR`, `en`, `es`)
+- [ ] Layout dedicado para celulares grandes e tablets
+- [ ] Conversor de unidades (m → ft, kg → lb, °C → °F)
+- [ ] Modo de gráficos
+- [ ] Temas adicionais
+- [ ] Localização (`pt-BR`, `en`, `es`)
 
 ---
 
-## 🤝 Contributing
+## 🤝 Contribuição
 
-Pull requests are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md) for the setup flow, quality gates, and contribution guidelines.
+Pull requests são bem-vindos. Veja [CONTRIBUTING.md](CONTRIBUTING.md) para o fluxo de setup, critérios de qualidade e orientações de contribuição.
 
 ---
 
-## 📄 License
+## 📄 Licença
 
-Distributed under the **MIT License**. See [`LICENSE`](LICENSE) for details.
+Distribuído sob a licença **MIT**. Veja [`LICENSE`](LICENSE) para mais detalhes.
