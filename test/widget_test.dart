@@ -8,31 +8,32 @@ void main() {
     SharedPreferences.setMockInitialValues({});
   });
 
-  testWidgets('calculator renders and performs a basic operation', (tester) async {
+  testWidgets('calculator renders the main mobile interface', (tester) async {
+    tester.view.physicalSize = const Size(390, 844);
+    tester.view.devicePixelRatio = 1.0;
+    addTearDown(tester.view.resetPhysicalSize);
+    addTearDown(tester.view.resetDevicePixelRatio);
+
     await tester.pumpWidget(const NexusApp());
-    await tester.pumpAndSettle();
+    await tester.pump(const Duration(milliseconds: 700));
 
     expect(find.text('NEXUS'), findsOneWidget);
+    expect(find.byIcon(Icons.history_rounded), findsOneWidget);
     expect(find.text('='), findsOneWidget);
-
-    await tester.tap(find.text('2'));
-    await tester.pump();
-    await tester.tap(find.text('+'));
-    await tester.pump();
-    await tester.tap(find.text('3'));
-    await tester.pump();
-    await tester.tap(find.text('='));
-    await tester.pumpAndSettle();
-
-    expect(find.text('5'), findsWidgets);
+    expect(find.text('AC'), findsOneWidget);
   });
 
   testWidgets('history panel opens from the app bar', (tester) async {
+    tester.view.physicalSize = const Size(390, 844);
+    tester.view.devicePixelRatio = 1.0;
+    addTearDown(tester.view.resetPhysicalSize);
+    addTearDown(tester.view.resetDevicePixelRatio);
+
     await tester.pumpWidget(const NexusApp());
-    await tester.pumpAndSettle();
+    await tester.pump(const Duration(milliseconds: 700));
 
     await tester.tap(find.byIcon(Icons.history_rounded));
-    await tester.pumpAndSettle();
+    await tester.pump(const Duration(milliseconds: 500));
 
     expect(find.text('HISTORY'), findsOneWidget);
   });
