@@ -8,7 +8,6 @@
 // ────────────────────────────────────────────────────────────────────
 
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 // ══════════════════════════════════════════════════════════════════════════════
 // Colour Palette
@@ -63,7 +62,7 @@ abstract class NexusColors {
 abstract class NexusTextStyles {
   // Expression display — needs a monospaced feel for number alignment
   static TextStyle display(BuildContext context) =>
-      GoogleFonts.jetBrainsMono(
+      const TextStyle(
         fontSize: 36,
         fontWeight: FontWeight.w300,
         color: NexusColors.textPrimary,
@@ -71,7 +70,7 @@ abstract class NexusTextStyles {
       );
 
   static TextStyle result(BuildContext context) =>
-      GoogleFonts.jetBrainsMono(
+      const TextStyle(
         fontSize: 52,
         fontWeight: FontWeight.w200,
         color: NexusColors.cyan,
@@ -79,7 +78,7 @@ abstract class NexusTextStyles {
       );
 
   static TextStyle resultError(BuildContext context) =>
-      GoogleFonts.jetBrainsMono(
+      const TextStyle(
         fontSize: 40,
         fontWeight: FontWeight.w200,
         color: NexusColors.red,
@@ -87,21 +86,21 @@ abstract class NexusTextStyles {
 
   // Button labels
   static TextStyle btnDigit(BuildContext context) =>
-      GoogleFonts.jetBrainsMono(
+      const TextStyle(
         fontSize: 22,
         fontWeight: FontWeight.w400,
         color: NexusColors.textPrimary,
       );
 
   static TextStyle btnOperator(BuildContext context) =>
-      GoogleFonts.jetBrainsMono(
+      const TextStyle(
         fontSize: 22,
         fontWeight: FontWeight.w500,
         color: NexusColors.violet,
       );
 
   static TextStyle btnFunction(BuildContext context) =>
-      GoogleFonts.spaceMono(
+      const TextStyle(
         fontSize: 13,
         fontWeight: FontWeight.w400,
         color: NexusColors.cyan,
@@ -109,35 +108,35 @@ abstract class NexusTextStyles {
       );
 
   static TextStyle btnEquals(BuildContext context) =>
-      GoogleFonts.jetBrainsMono(
+      const TextStyle(
         fontSize: 28,
         fontWeight: FontWeight.w600,
         color: NexusColors.bg0,
       );
 
   static TextStyle historyExpression(BuildContext context) =>
-      GoogleFonts.jetBrainsMono(
+      const TextStyle(
         fontSize: 13,
         fontWeight: FontWeight.w400,
         color: NexusColors.textSecondary,
       );
 
   static TextStyle historyResult(BuildContext context) =>
-      GoogleFonts.jetBrainsMono(
+      const TextStyle(
         fontSize: 16,
         fontWeight: FontWeight.w600,
         color: NexusColors.textPrimary,
       );
 
   static TextStyle badge(BuildContext context) =>
-      GoogleFonts.spaceMono(
+      const TextStyle(
         fontSize: 9,
         fontWeight: FontWeight.w700,
         letterSpacing: 1.2,
       );
 
   static TextStyle chip(BuildContext context) =>
-      GoogleFonts.spaceMono(
+      const TextStyle(
         fontSize: 10,
         fontWeight: FontWeight.w700,
         color: NexusColors.textSecondary,

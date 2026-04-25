@@ -170,8 +170,8 @@ Todos os tokens visuais ficam em `lib/utils/app_theme.dart`.
 
 ### Tipografia
 
-- **JetBrains Mono** para expressão e resultado
-- **Space Mono** para chips, rótulos e acentos técnicos da interface
+- tipografia configurada com `TextStyle` nativo do Flutter
+- pesos, contraste e espaçamento ajustados para leitura confortável em mobile
 
 ---
 
@@ -181,7 +181,6 @@ Todos os tokens visuais ficam em `lib/utils/app_theme.dart`.
 math_expressions: ^2.4.0      # Parsing e avaliação de expressões
 shared_preferences: ^2.2.2    # Persistência do histórico
 provider: ^6.1.1              # Gerenciamento de estado
-google_fonts: ^6.1.0          # Tipografia
 flutter_animate: ^4.5.0       # Pequenas animações da UI
 vibration: ^1.8.4             # Feedback tátil no mobile
 gap: ^3.0.1                   # Helpers de espaçamento
